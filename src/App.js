@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import routes from './routes'
+import {Link} from 'react-router-dom'
+// import Dashboard from './components/Dashboard/Dashboard'
+import Header from './components/Header/Header'
+// import Wizard from './components/Wizard/Wizard'
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state= {
+     
+      
+    }
+  }
+
+handleSubmit(){
+//component did mount
+}
+
+
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <Header />
+        <Link to="/wizard"><button>Add A Home</button> </Link> 
         </header>
+        <Link to="/" className='links'>Dashboard</Link>
+         
+
+        {routes}
       </div>
     );
   }
